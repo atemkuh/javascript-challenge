@@ -26,6 +26,9 @@ tableData.forEach(function(ufoSighting) {
 var button =d3.select("#filter-btn");
 button.on("click", function(){
     tbody.html("");
-    var inputElement =d3.select("#datetime");
-    var inputValue=inputElement.property("value");
+    var inputElement =d3.select("#datetime"); // get html date data by using the "select" method
+    var inputValue=inputElement.property("value");//get the property value of each date, state and shape
+    console.log(inputValue); //will get you the input value
+    var filteredData=tableData.filter(sighting =>sighting.datetime === inputValue);// filter equal datetime to input value
+    console.log(filteredData);
 })
