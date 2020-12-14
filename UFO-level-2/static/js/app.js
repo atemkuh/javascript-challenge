@@ -51,11 +51,22 @@ button.on("click", function(){
   tbody.html("");
   var inputElement =d3.select("input");
   var inputElement= inputElement.property("value");
-  var filteredData=tableData.filter(sighting=> sighting.datetime===inputValue||//filtered data be equal to selected category.
-  sighting.city===inputValue||
-  sighting.state===inputValue||
-  sighting.country===inputValue||
-  sighting.shape===inputValue);
+  var filteredData=tableData.filter(sighting => sighting.datetime===inputValue||//filtered data be equal to selected category.
+                                                sighting.city===inputValue||
+                                                sighting.state===inputValue||
+                                                sighting.country===inputValue||
+                                                sighting.shape===inputValue);
+
+  console.log(filteredData);
+  filteredData.forEach(function(selections) {
+  console.log(selections);
+  var row=tbody.append("tr");
+  Object.entries(selections).forEach(function([key,vlue]){
+          console.log(key,value);
+          var cell=row.append("td");
+          cell.text(value);
+  })
 
 
+})
 })
