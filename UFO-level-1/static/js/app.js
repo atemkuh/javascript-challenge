@@ -31,4 +31,18 @@ button.on("click", function(){
     console.log(inputValue); //will get you the input value
     var filteredData=tableData.filter(sighting =>sighting.datetime === inputValue);// filter equal datetime to input value
     console.log(filteredData);
+    filteredData.forEach(function(selections) {
+    console.log(selections);
+    var row=tbody.append("tr");
+    Object.entries(selections).forEach(function([key,vlue]){
+        console.log(key,value);
+        var cell=row.append("td");
+        cell.text(value);
+
+
+    })
+
+
+
+    })
 })
