@@ -22,4 +22,10 @@ tableData.forEach(function(ufoSighting) {
     })
    
 })
-
+// filter button selection
+var button =d3.select("#filter-btn");
+button.on("click", function(){
+    tbody.html("");
+    var inputElement =d3.select("#datetime");
+    var inputValue=inputElement.property("value");
+})
